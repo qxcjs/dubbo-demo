@@ -33,7 +33,9 @@
     <!-- service implementation, as same as regular local bean -->
     <bean id="demoService" class="org.apache.dubbo.demo.provider.DemoServiceImpl"/>
 
+    <dubbo:provider filter="violationException,default" validation="true" />
+
     <!-- declare the service interface to be exported -->
-    <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService" timeout="30000" validation="true"/>
+    <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService" timeout="30000"/>
 
 </beans>
